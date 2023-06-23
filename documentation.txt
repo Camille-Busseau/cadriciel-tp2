@@ -1,0 +1,29 @@
+TP1 - Laravel - CRUD
+Matricule 2195352
+
+Lien Github: https://github.com/Camille-Busseau/cadriciel-tp1
+Lien WebDev: https://e2195352.cmaisonneuve.qc.ca/maisonneuve2195352
+
+Objectif : Créer une plateforme avec le framework Laravel et générer la base de données, les modèles, les contrôleurs et les factories via le terminal.
+Générer des villes et des étudiant.es via Tinker. Permettre de voir, créer, modifier et supprimer des profils sur la plateforme en impactant la base de données. 
+
+Lignes de commande:
+    >composer create-project --prefer-dist laravel/laravel maisonneuve2195352 "8.*"
+    >php artisan make:model Student
+    >php artisan make:model City
+    >php artisan make:migration create_cities_table
+    (remplir la migration de cities, puis)
+    >php artisan migrate
+    >php artisan make:migration create_students_table
+    (remplir la migration de students, puis)
+    >php artisan migrate
+    >php artisan make:factory CityFactory -m City
+    >php artisan tinker
+    (dans la ligne de commande de tinker:)
+        \App\Models\City::factory()->times(15)->create();
+    >php artisan make:factory StudentFactory -m Student
+    >php artisan tinker
+    (dans la ligne de commande de tinker:)
+        \App\Models\Student::factory()->times(100)->create();
+    >php artisan make:controller CityController -m City
+    >php artisan make:controller StudentController -m Student
